@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "vtiger": {
+      "command": "node",
+      "args": ["/absolute/path/to/Vtiger-MCP-Agent/dist/index.js"],
+      "env": {
+        "VTIGER_INSTANCES_FILE": "/absolute/path/to/Vtiger-MCP-Agent/instances.yaml",
+        "VTIGER_DEFAULT_INSTANCE": "dragonsden",
+        "VTIGER_ENABLE_DELETE": "false",
+        "VTIGER_DRAGONSDEN_USERNAME": "",
+        "VTIGER_DRAGONSDEN_ACCESS_KEY": "",
+        "VTIGER_DRAGONSDEN_CF_ACCESS_CLIENT_ID": "",
+        "VTIGER_DRAGONSDEN_CF_ACCESS_CLIENT_SECRET": "",
+        "VTIGER_TECYEAH_USERNAME": "",
+        "VTIGER_TECYEAH_ACCESS_KEY": "",
+        "VTIGER_TECYEAH_CF_ACCESS_CLIENT_ID": "",
+        "VTIGER_TECYEAH_CF_ACCESS_CLIENT_SECRET": ""
+      }
+    }
+  }
+}
