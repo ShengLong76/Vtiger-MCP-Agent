@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: self-check with fixture env
+        env:
+          VTIGER_INSTANCES_FILE: instances.example.yaml
+          VTIGER_DRAGONSDEN_USERNAME: ci.user
+          VTIGER_DRAGONSDEN_ACCESS_KEY: ci-not-a-real-key
+          VTIGER_TECYEAH_USERNAME: ci.user
+          VTIGER_TECYEAH_ACCESS_KEY: ci-not-a-real-key
+        run: node dist/index.js --self-check

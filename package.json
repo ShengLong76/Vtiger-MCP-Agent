@@ -1,0 +1,41 @@
+{
+  "name": "vtiger-mcp-agent",
+  "version": "1.0.0",
+  "description": "Multi-instance, all-module MCP server for Vtiger CRM 8.x webservice.php",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "vtiger-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "self-check": "tsx src/index.ts --self-check",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "vtiger",
+    "crm",
+    "grok",
+    "cos"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.1",
+    "dotenv": "^16.6.1",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.6",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

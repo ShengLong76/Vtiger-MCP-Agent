@@ -1,0 +1,23 @@
+# Copy to instances.yaml (gitignored) and point VTIGER_INSTANCES_FILE at it.
+# Secrets stay in the environment — do not put access keys or CF secrets here.
+
+default_instance: dragonsden
+
+instances:
+  - id: dragonsden
+    name: Dragons Den CRM
+    base_url: https://crm.dragonsden.work
+    username_env: VTIGER_DRAGONSDEN_USERNAME
+    access_key_env: VTIGER_DRAGONSDEN_ACCESS_KEY
+    cf_access_client_id_env: VTIGER_DRAGONSDEN_CF_ACCESS_CLIENT_ID
+    cf_access_client_secret_env: VTIGER_DRAGONSDEN_CF_ACCESS_CLIENT_SECRET
+
+  # Second named instance — change base_url to that client's real CRM.
+  # Cos/Grok Bot passes instance: "tecyeah" on any tool call.
+  - id: tecyeah
+    name: TecYeah CRM
+    base_url: https://crm.example.com
+    username_env: VTIGER_TECYEAH_USERNAME
+    access_key_env: VTIGER_TECYEAH_ACCESS_KEY
+    cf_access_client_id_env: VTIGER_TECYEAH_CF_ACCESS_CLIENT_ID
+    cf_access_client_secret_env: VTIGER_TECYEAH_CF_ACCESS_CLIENT_SECRET
